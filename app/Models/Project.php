@@ -10,6 +10,14 @@ class Project extends Model
 {
       use HasFactory;
 
+      protected $fillable = [
+            'name',
+            'slug',
+            'description',
+            'video',
+            'github'
+      ];
+
       public function skills(): BelongsToMany
       {
             return $this->belongsToMany(Skill::class);
