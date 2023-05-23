@@ -25,7 +25,7 @@ class StoreMessageRequest extends FormRequest
                   'name' => 'required|min:6|max:255',
                   'email' => 'required|email:rfc,dns|min:6|max:255',
                   'email_object' => 'nullable|min:6|max:255',
-                  'mobile_country_code' => 'nullable|regex:/^[0-9+]+$/|min:2|max:10',
+                  // 'mobile_country_code' => 'nullable|regex:/^[0-9+]+$/|min:2|max:10',
                   'mobile' => 'nullable|numeric|digits:10',
                   'message' => 'required|min:10|max:65000'
             ];
