@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 // Controllers
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\SkillController;
-use App\Http\Controllers\MessageController;
+use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\MessageController;
 
 /*
 |--------------------------------------------------------------------------
