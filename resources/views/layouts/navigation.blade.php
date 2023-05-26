@@ -82,6 +82,18 @@
             <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('dashboard')">
+                {{ __('Projects') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.skills.index')" :active="request()->routeIs('dashboard')">
+                {{ __('Skills') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('admin.messages.index')" :active="request()->routeIs('dashboard')">
+                {{ __('Messages') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
