@@ -33,7 +33,7 @@
                                           </button>
                                           
                                           {{-- dropdown menu --}}
-                                          <div id="dropdown" style="display:none" class="absolute right-0 top-full z-10 w-48 rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                          <div id="dropdown" style="display:none" class="absolute right-0 top-full z-10 w-32 rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Update</a>
                                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Delete</a>
                                           </div>
