@@ -24,7 +24,7 @@ class StoreSkillRequest extends FormRequest
             return [
                   'name' => 'required|min:6|max:255|unique:skills,name',
                   'description' => 'nullable|min:20|max:65000',
-                  'logo' => 'nullable|image',
+                  'logo' => 'nullable|mimetypes:image/jpg,image/jpeg,image/svg,image/png,image/bmp',
                   'documentation' => 'nullable|min:20|max:255'
             ];
       }

@@ -1,11 +1,11 @@
 <x-app-layout>
       <x-slot name="header" class="flex justify-between">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                  {{ __('Projects') }}
+                  {{ __('Skills') }}
             </h2>
 
-            <a href="{{ route('admin.projects.create') }}" class="border-2 border-gray-500 py-1 px-3 rounded-full text-sm hover:bg-gray-800 hover:text-white">
-                  Add project
+            <a href="{{ route('admin.skills.create') }}" class="border-2 border-gray-500 py-1 px-3 rounded-full text-sm hover:bg-gray-800 hover:text-white">
+                  Add skill
             </a>
       </x-slot>
 
@@ -17,15 +17,14 @@
                               <li class="flex justify-between items-center gap-x-6 p-5">
                                     <div class="flex gap-x-4">
                                           <div class="min-w-0 flex-auto">
-                                                <p class="text-xl font-semibold leading-6 text-gray-900">Boolzapp</p>
-                                                <p class="mt-1 truncate text-xs leading-5 text-gray-500">Replica fedele whatsapp web</p>
+                                                <p class="text-xl font-semibold leading-6 text-gray-900">Html</p>
                                           </div>
                                     </div>
 
                                     {{-- tramite il framework Alpine.js si inizializza una variabile open e tramite eventi si tiene traccia dello stato chiuso/aperto, si evita che si propaghi al genitore e si fa si che cliccando al di fuori del dropdown open=false --}}
                                     <div x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false" class="hidden sm:flex sm:justify-end sm:items-center gap-x-4 relative">
                                           <a href="" class="border border-gray-300 py-1 px-2 rounded-lg font-bold hover:bg-gray-100">
-                                                View project
+                                                View skill
                                           </a>
 
                                           {{-- trigger del dropdown --}}
