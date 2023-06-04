@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Skill;
 use App\Http\Requests\StoreSkillRequest;
 use App\Http\Requests\UpdateSkillRequest;
+// Helpers
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class SkillController extends Controller
 {
@@ -14,7 +17,8 @@ class SkillController extends Controller
        */
       public function index()
       {
-            return view('admin.skills.index');
+            $skills = Skill::all();
+            return view('admin.skills.index', compact('skills'));
       }
 
       /**
@@ -30,7 +34,16 @@ class SkillController extends Controller
        */
       public function store(StoreSkillRequest $request)
       {
-            //
+            $data = $request->validated();
+            $data['slug'] = Str::slug($data['name']);
+
+            if (array_key_exists('image', $data)) {
+                  $img_path = Storage::put('skills', $data['image']);
+                  $data['image'] = $img_path;
+            }
+
+            $newSkill = Skill::create($data);
+            return redirect()->route('admin.skills.show', $newSkill);
       }
 
       /**
@@ -38,7 +51,7 @@ class SkillController extends Controller
        */
       public function show(Skill $skill)
       {
-            //
+            return view('admin.skills.show', compact('skill'));
       }
 
       /**
@@ -62,6 +75,11 @@ class SkillController extends Controller
        */
       public function destroy(Skill $skill)
       {
-            //
+            if ($skill->image) {
+                  Storage::delete($skill->image);
+            }
+
+            $skill->delete();
+            return redirect()->route('admin.skills.index');
       }
 }

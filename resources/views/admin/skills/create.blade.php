@@ -22,7 +22,7 @@
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
                                     <label for="name" class="block font-medium leading-6 text-gray-900">Nome skill *</label>
-                                    <input type="text" id="name" name="name" class="w-full md:w-1/2 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire nome skill..." required min="6" max="255">
+                                    <input type="text" id="name" name="name" class="w-full md:w-1/2 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire nome skill..." required max="255">
                               </div>
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">

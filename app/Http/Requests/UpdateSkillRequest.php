@@ -25,12 +25,11 @@ class UpdateSkillRequest extends FormRequest
             return [
                   'name' => [
                         'required',
-                        'min:6',
                         'max:255',
                         Rule::unique('skills')->ignore($this->skill->id)
                   ],
                   'description' => 'nullable|min:20|max:65000',
-                  'logo' => 'nullable|image',
+                  'logo' => 'nullable|mimetypes:image/jpg,image/jpeg,image/svg,image/png,image/bmp',
                   'documentation' => 'nullable|min:20|max:255'
             ];
       }

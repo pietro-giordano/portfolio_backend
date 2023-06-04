@@ -30,7 +30,7 @@ class UpdateProjectRequest extends FormRequest
                         Rule::unique('projects')->ignore($this->project->id)
                   ],
                   'description' => 'nullable|min:20|max:65000',
-                  'video' => 'nullable|file',
+                  'video' => 'nullable|mimetypes:video/avi,video/mpeg,video/mp4',
                   'github' => 'nullable|min:20|max:255',
                   'skills' => 'nullable|array|exists:skills,id'
             ];
