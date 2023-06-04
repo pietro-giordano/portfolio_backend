@@ -59,7 +59,7 @@ class SkillController extends Controller
        */
       public function edit(Skill $skill)
       {
-            //
+            return view('admin.skills.edit', compact('skill'));
       }
 
       /**
@@ -67,7 +67,11 @@ class SkillController extends Controller
        */
       public function update(UpdateSkillRequest $request, Skill $skill)
       {
-            //
+            $data = $request->validated();
+            $data['slug'] = Str::slug($data['name']);
+
+            $skill->update($data);
+            return redirect()->route('admin.skills.show', $skill->id);
       }
 
       /**

@@ -22,12 +22,12 @@
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
                                     <label for="name" class="block font-medium leading-6 text-gray-900">Nome skill *</label>
-                                    <input type="text" id="name" name="name" class="w-full md:w-1/2 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire nome skill..." required max="255">
+                                    <input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full md:w-1/2 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire nome skill..." required max="255">
                               </div>
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
                                     <label for="description" class="block font-medium leading-6 text-gray-900">Descrizione skill</label>
-                                    <textarea id="description" name="description" rows="10" class="w-full md:w-2/3 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire descrizione skill..." min="20" max="65000"></textarea>
+                                    <textarea id="description" name="description" rows="10" class="w-full md:w-2/3 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire descrizione skill..." min="20" max="65000">{{ old('description') }}</textarea>
                               </div>
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
@@ -37,7 +37,7 @@
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
                                     <label for="docs" class="block font-medium leading-6 text-gray-900">Link alla documentazione</label>
-                                    <input type="text" id="docs" name="docs" class="w-full md:w-1/2 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire link documentazione..." min="20" max="255">
+                                    <input type="text" id="documentation" name="documentation" value="{{ old('documentation') }}" class="w-full md:w-1/2 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire link documentazione..." min="20" max="255">
                               </div>
                               
                               <div class="p-3 lg:p-5">
