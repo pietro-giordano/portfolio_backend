@@ -30,6 +30,7 @@ class UpdateSkillRequest extends FormRequest
                   ],
                   'description' => 'nullable|min:20|max:65000',
                   'logo' => 'nullable|mimetypes:image/jpg,image/jpeg,image/svg,image/png,image/bmp',
+                  'delete_logo' => 'nullable',
                   'documentation' => 'nullable|min:20|max:255'
             ];
       }
