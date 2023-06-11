@@ -9,18 +9,14 @@
             </a>
       </x-slot>
 
-      <div class="py-10">
+      <div class="mt-5 max-w-7xl mx-auto sm:px-6 lg:px-8">
+            @include('partials.errors')
+      </div>
+
+      <div class="py-5">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                   <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-
-                        @foreach ($errors->all() as $message) 
-                              <ul>
-                                    <li>
-                                          {{ $message }}
-                                    </li>
-                              </ul>
-                        @endforeach
-
+                        
                         <form action="{{ route('admin.skills.update', $skill->id) }}" method="POST" enctype="multipart/form-data" class="pt-8 pb-20 md:px-2 lg:px-4">
                               @csrf
                               @method('PUT')

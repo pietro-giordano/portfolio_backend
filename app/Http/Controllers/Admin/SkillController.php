@@ -43,7 +43,7 @@ class SkillController extends Controller
             }
 
             $newSkill = Skill::create($data);
-            return redirect()->route('admin.skills.show', $newSkill);
+            return redirect()->route('admin.skills.show', $newSkill)->with('success', 'Skill created with success');
       }
 
       /**
@@ -71,7 +71,7 @@ class SkillController extends Controller
             $data['slug'] = Str::slug($data['name']);
 
             $skill->update($data);
-            return redirect()->route('admin.skills.show', $skill->id);
+            return redirect()->route('admin.skills.show', $skill->id)->with('success', 'Skill updated with success');
       }
 
       /**
@@ -84,6 +84,6 @@ class SkillController extends Controller
             }
 
             $skill->delete();
-            return redirect()->route('admin.skills.index');
+            return redirect()->route('admin.skills.index')->with('success', 'Skill deleted with success');
       }
 }
