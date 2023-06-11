@@ -37,9 +37,9 @@ class SkillController extends Controller
             $data = $request->validated();
             $data['slug'] = Str::slug($data['name']);
 
-            if (array_key_exists('image', $data)) {
-                  $img_path = Storage::put('skills', $data['image']);
-                  $data['image'] = $img_path;
+            if (array_key_exists('logo', $data)) {
+                  $img_path = Storage::put('skills', $data['logo']);
+                  $data['logo'] = $img_path;
             }
 
             $newSkill = Skill::create($data);
@@ -70,6 +70,21 @@ class SkillController extends Controller
             $data = $request->validated();
             $data['slug'] = Str::slug($data['name']);
 
+            if (array_key_exists('delete_logo', $data)) {
+                  if ($skill->logo) {
+                        Storage::delete($skill->logo);
+                        $skill->logo = null;
+                        $skill->save();
+                  }
+            } elseif (array_key_exists('logo', $data)) {
+                  $img_path = Storage::put('skills', $data['logo']);
+                  $data['logo'] = $img_path;
+
+                  if ($skill->logo) {
+                        Storage::delete($skill->logo);
+                  }
+            }
+
             $skill->update($data);
             return redirect()->route('admin.skills.show', $skill->id)->with('success', 'Skill updated with success');
       }
@@ -79,8 +94,8 @@ class SkillController extends Controller
        */
       public function destroy(Skill $skill)
       {
-            if ($skill->image) {
-                  Storage::delete($skill->image);
+            if ($skill->logo) {
+                  Storage::delete($skill->logo);
             }
 
             $skill->delete();

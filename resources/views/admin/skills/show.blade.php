@@ -18,13 +18,13 @@
                   <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
                         <div class="p-5 pt-12 pb-20 md:px-8 lg:px-10">
-                              <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                              <h2 class="font-semibold text-2xl text-gray-800 leading-tight">
                                     {{ $skill->name }}
                               </h2>
 
-                              @if ($skill->image)
-                                    <div>
-                                          <img src="{{ asset('storage/'.$skills->image) }}" alt="">
+                              @if ($skill->logo)
+                                    <div class="mt-4 w-24">
+                                          <img src="{{ asset('storage/'.$skill->logo) }}" alt="" class="rounded-lg">
                                     </div>
                               @endif
 

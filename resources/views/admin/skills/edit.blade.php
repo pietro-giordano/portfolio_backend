@@ -36,6 +36,15 @@
                               </div>
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
+                                    @if ($skill->logo)
+                                          <input type="checkbox" name="delete_logo" id="delete_logo">
+                                          <label for="delete_logo">Delete logo</label>
+
+                                          <div class="mt-4 w-24">
+                                                <img src="{{ asset('storage/'.$skill->logo) }}" alt="" class="rounded-lg">
+                                          </div>
+                                    @endif      
+
                                     <label for="logo" class="block font-medium leading-6 text-gray-900">Carica immagine logo</label>
                                     <input type="file" id="logo" name="logo" class="text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" accept="image/*">
                               </div>
