@@ -11,20 +11,23 @@
                 </div>
 
                 <!-- Navigation Links -->
+                {{-- str_starts_with(request()->route()->getName(), 'admin.skills.') 
+                con questo diciamo che ogni route che inizia con admin.skills. restituisce condizione true 
+                in base a se la condizione è true o false gli passiamo delle classi, che si trovano in responsive-nav-link.blade.php --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('admin.projects.index')" :active="str_starts_with(request()->route()->getName(), 'admin.projects.')">
                         {{ __('Projects') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('admin.skills.index')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('admin.skills.index')" :active="str_starts_with(request()->route()->getName(), 'admin.skills.')">
                         {{ __('Skills') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('admin.messages.index')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('admin.messages.index')" :active="str_starts_with(request()->route()->getName(), 'admin.messages.')">
                         {{ __('Messages') }}
                     </x-nav-link>
                 </div>
@@ -79,19 +82,19 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('admin.projects.index')" :active="str_starts_with(request()->route()->getName(), 'admin.projects.')">
                 {{ __('Projects') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link :href="route('admin.skills.index')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('admin.skills.index')" :active="str_starts_with(request()->route()->getName(), 'admin.skills.')">
                 {{ __('Skills') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link :href="route('admin.messages.index')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('admin.messages.index')" :active="str_starts_with(request()->route()->getName(), 'admin.messages.')">
                 {{ __('Messages') }}
             </x-responsive-nav-link>
         </div>
