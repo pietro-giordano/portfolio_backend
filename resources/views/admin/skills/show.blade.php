@@ -13,11 +13,26 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                   <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
-                        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                              {{ $skill->name }}
-                        </h2>
+                        <div class="p-5 pt-12 pb-20 md:px-8 lg:px-10">
+                              <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                                    {{ $skill->name }}
+                              </h2>
 
+                              @if ($skill->image)
+                                    <div>
+                                          <img src="{{ asset('storage/'.$skills->image) }}" alt="">
+                                    </div>
+                              @endif
 
+                              <p class="my-5">
+                                    {{ $skill->description }}
+                              </p>
+
+                              <div>
+                                    <div class="font-semibold">Documentazione:</div>
+                                    <a href="{{ $skill->documentation }}" class="hover:text-[#2563eb]">{{ $skill->documentation }}</a>
+                              </div>
+                        </div>
 
                   </div>
             </div>

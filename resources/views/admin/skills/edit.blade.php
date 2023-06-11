@@ -13,8 +13,17 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                   <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
-                        <form action="{{ route('admin.skills.store') }}" method="POST" enctype="multipart/form-data" class="pt-8 pb-20 md:px-2 lg:px-4">
+                        @foreach ($errors->all() as $message) 
+                              <ul>
+                                    <li>
+                                          {{ $message }}
+                                    </li>
+                              </ul>
+                        @endforeach
+
+                        <form action="{{ route('admin.skills.update', $skill->id) }}" method="POST" enctype="multipart/form-data" class="pt-8 pb-20 md:px-2 lg:px-4">
                               @csrf
+                              @method('PUT')
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5 text-xs">
                                     I campi con * sono obbligatori
