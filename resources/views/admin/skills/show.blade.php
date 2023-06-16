@@ -32,10 +32,12 @@
                                     {{ $skill->description }}
                               </p>
 
-                              <div>
-                                    <div class="font-semibold">Documentazione:</div>
-                                    <a href="{{ $skill->documentation }}" class="hover:text-[#2563eb]">{{ $skill->documentation }}</a>
-                              </div>
+                              @if ($skill->github)
+                                    <div>
+                                          <div class="font-semibold">Documentazione:</div>
+                                          <a href="{{ $skill->documentation }}" class="hover:text-[#2563eb]">{{ $skill->documentation }}</a>
+                                    </div>
+                              @endif
                         </div>
 
                   </div>
