@@ -25,7 +25,7 @@ class StoreProjectRequest extends FormRequest
                   'name' => 'required|min:6|max:255|unique:projects,name',
                   'description' => 'nullable|min:20|max:65000',
                   'video' => 'nullable|mimetypes:video/avi,video/mpeg,video/mp4',
-                  'github' => 'nullable|min:20|max:255',
+                  'github' => 'nullable|max:255',
                   'skills' => 'nullable|array|exists:skills,id'
             ];
       }
