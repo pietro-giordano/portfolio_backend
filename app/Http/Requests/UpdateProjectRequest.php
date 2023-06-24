@@ -31,7 +31,7 @@ class UpdateProjectRequest extends FormRequest
                   ],
                   'description' => 'nullable|min:20|max:65000',
                   'video' => 'nullable|mimetypes:video/avi,video/mpeg,video/mp4',
-                  'github' => 'nullable|min:20|max:255',
+                  'github' => 'nullable|max:255',
                   'skills' => 'nullable|array|exists:skills,id'
             ];
       }
