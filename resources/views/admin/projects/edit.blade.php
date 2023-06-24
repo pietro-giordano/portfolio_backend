@@ -37,7 +37,7 @@
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
                                     <label for="skills[]" class="block font-medium leading-6 text-gray-900">Skills associate</label>
-                                    @foreach ($project->skills as $skill)
+                                    @foreach ($skills as $skill)
                                           <div class="">
                                                 <input class="" type="checkbox" name="skills[]" id="skills-{{ $skill->id }}" 
                                                 {{-- Questa parte condizionale controlla se sono presenti valori precedenti per il campo "skills". 
