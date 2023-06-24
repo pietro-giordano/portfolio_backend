@@ -37,7 +37,7 @@
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
                                     <label for="skills[]" class="block font-medium leading-6 text-gray-900">Skills associate</label>
                                     @foreach ($skills as $skill)
-                                          <div class="form-check form-check-inline">
+                                          <div class="">
                                                 <input class="" type="checkbox" name="skills[]" id="skills-{{ $skill->id }}" 
                                                 {{ in_array($skill->id, old('skills', [])) ? 'checked' : '' }} value="{{ $skill->id }}">
                                                 <label class="font-medium" for="skill-{{ $skill->id }}">{{ $skill->name }}</label>

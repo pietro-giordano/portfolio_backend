@@ -81,7 +81,42 @@ class ProjectController extends Controller
        */
       public function update(UpdateProjectRequest $request, Project $project)
       {
-            //
+            $data = $request->validated();
+            $data['slug'] = Str::slug($data['name']);
+
+            // se esiste il check su delete cancella il video e setta il valore a null 
+            if (array_key_exists('delete_video', $data)) {
+                  if ($project->video) {
+                        Storage::delete($project->video);
+                        $project->video = null;
+                        $project->save();
+                  }
+                  // altrimenti se esiste video carica il percorso del nuovo video
+            } else if (array_key_exists('video', $data)) {
+                  $video_path = Storage::put('uploads', $data['video']);
+                  $data['video'] = $video_path;
+                  // e cancella il vecchio video, inteso il file
+                  if ($project->video) {
+                        Storage::delete($project->video);
+                  }
+            }
+
+            if (array_key_exists('github', $data)) {
+                  $jsonData = json_encode($data['github']);
+                  $data['github'] = $jsonData;
+            }
+
+            $project->update($data);
+
+            // se esistono skills associate fa l'update dei valori
+            if (array_key_exists('skills', $data)) {
+                  $project->skills()->sync($data['skills']);
+            } else {
+                  // altrimenti fa il detach
+                  $project->skills()->detach();
+            }
+
+            return redirect()->route('admin.projects.show', $project->id)->with('success', 'Project updated with success');
       }
 
       /**
