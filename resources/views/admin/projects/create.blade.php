@@ -31,7 +31,7 @@
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
                                     <label for="description" class="block font-medium leading-6 text-gray-900">Descrizione progetto</label>
-                                    <textarea id="description" name="description" value="{{ old('description') }}" rows="10" class="w-full md:w-2/3 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire descrizione progetto..." min="20" max="65000"></textarea>
+                                    <textarea id="description" name="description" rows="10" class="w-full md:w-2/3 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire descrizione progetto..." min="20" max="65000">{{ old('description') }}</textarea>
                               </div>
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
