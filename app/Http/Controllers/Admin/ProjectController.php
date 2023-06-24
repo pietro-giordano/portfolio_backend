@@ -93,7 +93,7 @@ class ProjectController extends Controller
                   }
                   // altrimenti se esiste video carica il percorso del nuovo video
             } else if (array_key_exists('video', $data)) {
-                  $video_path = Storage::put('uploads', $data['video']);
+                  $video_path = Storage::put('projects', $data['video']);
                   $data['video'] = $video_path;
                   // e cancella il vecchio video, inteso il file
                   if ($project->video) {
@@ -124,6 +124,11 @@ class ProjectController extends Controller
        */
       public function destroy(Project $project)
       {
-            //
+            if ($project->video) {
+                  Storage::delete($project->video);
+            }
+
+            $project->delete();
+            return redirect()->route('admin.projects.index')->with('success', 'Project deleted with success');
       }
 }

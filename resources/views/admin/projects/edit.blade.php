@@ -67,7 +67,7 @@
                                           </div>
                                     @endif 
 
-                                    <label for="video" class="block font-medium leading-6 text-gray-900">Carica video dimostrativo</label>
+                                    <label for="video" class="block font-medium leading-6 text-gray-900 mt-2">Carica video dimostrativo</label>
                                     <input type="file" id="video" name="video" class="text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" accept="video/*">
                               </div>
 
