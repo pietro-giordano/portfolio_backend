@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-        <link rel="stylesheet" href="path/to/plyr.css">
+
+        <!-- plyr.js css -->
+        <link rel="stylesheet" href="node_modules\plyr\src\sass\plyr.scss">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -138,6 +140,7 @@
             </div>
         </div>
 
-        <script src="path/to/plyr.js"></script>
+        <!-- plyr.js script -->
+        <script src="node_modules\plyr\src\js\plyr.js"></script>
     </body>
 </html>

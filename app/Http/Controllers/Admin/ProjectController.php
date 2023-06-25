@@ -45,6 +45,7 @@ class ProjectController extends Controller
                   $data['video'] = $video_path;
             }
 
+            // encoda in formato json(è così nel campo del database) da array
             if (array_key_exists('github', $data)) {
                   $jsonData = json_encode($data['github']);
                   $data['github'] = $jsonData;
@@ -75,6 +76,8 @@ class ProjectController extends Controller
       public function edit(Project $project)
       {
             $skills = Skill::all();
+            // decodifica github che è in formato json per poterlo utilizzare nel template come array
+            $project->github = json_decode($project->github);
             return view('admin.projects.edit', compact('project', 'skills'));
       }
 
@@ -103,6 +106,7 @@ class ProjectController extends Controller
                   }
             }
 
+            // encoda in formato json(è così nel campo del database) da array
             if (array_key_exists('github', $data)) {
                   $jsonData = json_encode($data['github']);
                   $data['github'] = $jsonData;

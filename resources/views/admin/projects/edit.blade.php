@@ -73,8 +73,8 @@
 
                               <div class="px-3 pb-3 lg:px-5 lg:pb-5">
                                     <label for="github" class="block font-medium leading-6 text-gray-900">Link github al progetto</label>
-                                    <input type="text" id="github-0" name="github[]" value="{{ old('github[0]', $project->github) }}" class="w-full md:w-1/2 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire link progetto..." min="20" max="255">
-                                    <input type="text" id="github-1" name="github[]" value="{{ old('github[1]', $project->github) }}" class="block w-full md:w-1/2 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire secondo link se previsto..." min="20" max="255">
+                                    <input type="text" id="github-0" name="github[]" value="{{ old('github[0]', $project->github[0]) }}" class="w-full md:w-1/2 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire link progetto..." min="20" max="255">
+                                    <input type="text" id="github-1" name="github[]" value="{{ old('github[1]', $project->github[1]) }}" class="block w-full md:w-1/2 text-sm mt-2 rounded-md shadow-sm border-0 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md" placeholder="Inserire secondo link se previsto..." min="20" max="255">
                               </div>
                               
                               <div class="p-3 lg:p-5">

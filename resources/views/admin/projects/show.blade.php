@@ -24,7 +24,7 @@
 
                               @if ($project->video)
                                     <div class="mt-4">
-                                          <video controls data-plyr>
+                                          <video debug controls data-plyr>
                                                 <source src="{{ asset('storage/'.$project->video) }}" type="video/mp4">
                                           </video>
                                     </div>
