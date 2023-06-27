@@ -3,22 +3,22 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Skill;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
-class SkillController extends Controller
+class ProjectController extends Controller
 {
       /**
        * Display a listing of the resource.
        */
       public function index()
       {
-            // recupero le skills recuperando anche le relazioni che hanno coi projects (anche se probabilmente non userò)
-            $skills = Skill::with('projects')->get();
-            // per ogni skill verifico che ci sia un'immagine e nel caso tramite asset restituisco il percorso completo da poter passare al front-end
-            foreach ($skills as $skill) {
-                  if ($skill->logo) {
-                        $skill['logo'] = asset('storage/' . $skill->logo);
+            // recupero i projects recuperando anche le relazioni che hanno con le skills (anche se probabilmente non userò)
+            $projects = Project::with('skills')->get();
+            // per ogni project verifico che ci sia un video e nel caso tramite asset restituisco il percorso completo da poter passare al front-end
+            foreach ($projects as $project) {
+                  if ($project->video) {
+                        $project['video'] = asset('storage/' . $project->video);
                   }
             }
             // ritorno risposta json contenente le skills
@@ -26,7 +26,7 @@ class SkillController extends Controller
                   'success' => true,
                   'code' => 200,
                   'message' => 'Ok',
-                  'skills' => $skills
+                  'projects' => $projects
             ]);
       }
 

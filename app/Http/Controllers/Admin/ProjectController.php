@@ -97,7 +97,7 @@ class ProjectController extends Controller
                         $project->save();
                   }
                   // altrimenti se esiste video carica il percorso del nuovo video
-            } else if (array_key_exists('video', $data)) {
+            } elseif (array_key_exists('video', $data)) {
                   $video_path = Storage::put('projects', $data['video']);
                   $data['video'] = $video_path;
                   // e cancella il vecchio video, inteso il file
