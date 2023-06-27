@@ -20,6 +20,12 @@ class SkillController extends Controller
                   if ($skill->logo) {
                         $skill['logo'] = asset('storage/' . $skill->logo);
                   }
+                  // e per ogni project associato a skill aggiusto percorso video se presente
+                  foreach ($skill->projects as $project) {
+                        if ($project->video) {
+                              $project['video'] = asset('storage/' . $project->video);
+                        }
+                  }
             }
             // ritorno risposta json contenente le skills
             return response()->json([

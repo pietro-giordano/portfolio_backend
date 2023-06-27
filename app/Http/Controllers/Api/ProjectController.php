@@ -20,6 +20,12 @@ class ProjectController extends Controller
                   if ($project->video) {
                         $project['video'] = asset('storage/' . $project->video);
                   }
+                  // e per ogni skill nel project aggiusto percorso immagine se presente
+                  foreach ($project->skills as $skill) {
+                        if ($skill->logo) {
+                              $skill['logo'] = asset('storage/' . $skill->logo);
+                        }
+                  }
             }
             // ritorno risposta json contenente le skills
             return response()->json([
