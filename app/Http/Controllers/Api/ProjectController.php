@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -55,9 +56,31 @@ class ProjectController extends Controller
       /**
        * Display the specified resource.
        */
-      public function show(string $id)
+      public function show($slug)
       {
-            //
+            try {
+                  $project = Project::where('slug', $slug)->with('skills')->firstOrFail();
+                  if ($project->video) {
+                        $project->video = asset('storage/' . $project->video);
+                  }
+                  foreach ($project->skills as $skill) {
+                        if ($skill->logo) {
+                              $skill['logo'] = asset('storage/' . $skill->logo);
+                        }
+                  }
+                  return response()->json([
+                        'success' => true,
+                        'code' => 200,
+                        'message' => 'Ok',
+                        'project' => $project
+                  ]);
+            } catch (Exception $e) {
+                  return response()->json([
+                        'success' => false,
+                        'code' => $e->getCode(),
+                        'message' => $e->getMessage()
+                  ]);
+            }
       }
 
       /**
