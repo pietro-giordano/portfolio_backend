@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email_object')->nullable();
             // $table->string('mobile_country_code', 10)->nullable();
             $table->string('mobile', 10)->nullable();
-            $table->text('message')->nullable();
+            $table->text('message');
             $table->timestamps();
         });
     }

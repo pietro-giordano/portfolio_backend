@@ -31,6 +31,7 @@ class MessageController extends Controller
        */
       public function store(StoreMessageRequest $request)
       {
+            // il try catch potrebbe essere superfluo, non lo so (reminder per il pietro del futuro)
             try {
                   $data = $request->validated();
                   $newMessage = Message::create($data);

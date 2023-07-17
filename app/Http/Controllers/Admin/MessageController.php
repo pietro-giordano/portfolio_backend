@@ -14,7 +14,8 @@ class MessageController extends Controller
        */
       public function index()
       {
-            return view('admin.messages.index');
+            $messages = Message::orderByDesc('created_at')->get();
+            return view('admin.messages.index', compact('messages'));
       }
 
       /**
@@ -38,7 +39,7 @@ class MessageController extends Controller
        */
       public function show(Message $message)
       {
-            //
+            return view('admin.messages.show', compact('message'));
       }
 
       /**
@@ -62,6 +63,7 @@ class MessageController extends Controller
        */
       public function destroy(Message $message)
       {
-            //
+            $message->delete();
+            return redirect()->route('admin.messages.index')->with('success', 'Message deleted with success');
       }
 }
