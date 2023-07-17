@@ -13,7 +13,6 @@ class Message extends Model
             'name',
             'email',
             'email_object',
-            // 'mobile_country_code',
             'mobile',
             'message'
       ];

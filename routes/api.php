@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\SkillController;
 use Illuminate\Http\Request;
@@ -23,4 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::name('api.')->group(function () {
     Route::resource('projects', ProjectController::class)->only(['index', 'show']);
     Route::resource('skills', SkillController::class)->only(['index']);
+    Route::resource('messages', MessageController::class)->only(['store']);
 });
