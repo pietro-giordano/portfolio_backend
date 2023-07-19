@@ -27,6 +27,10 @@ class ProjectController extends Controller
                               $skill['logo'] = asset('storage/' . $skill->logo);
                         }
                   }
+                  // decodifica github che è in formato json per poterlo utilizzare nel template come array
+                  if ($project->github) {
+                        $project['github'] = json_decode($project->github);
+                  }
             }
             // ritorno risposta json contenente le skills
             return response()->json([
