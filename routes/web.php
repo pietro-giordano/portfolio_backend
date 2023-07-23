@@ -19,7 +19,7 @@ use App\Http\Controllers\Admin\MessageController;
 */
 
 Route::get('/', function () {
-      return view('welcome');
+      return view('auth.login');
 });
 
 Route::prefix('admin')->name('admin.')->get('/dashboard', function () {
