@@ -21,14 +21,14 @@
                               @foreach ($projects as $project)
                                     <li class="flex justify-between items-center gap-x-6 p-5">
                                           <div class="flex gap-x-4">
-                                                <div class="min-w-0 flex-auto">
+                                                <div class="min-w-0 max-w-[120px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-[650px] flex-auto">
                                                       <p class="text-xl font-semibold leading-6 text-gray-900">{{ $project->name }}</p>
                                                       <p class="mt-1 truncate text-xs leading-5 text-gray-500">{{ $project->description }}</p>
                                                 </div>
                                           </div>
 
                                           {{-- tramite il framework Alpine.js si inizializza una variabile open e tramite eventi si tiene traccia dello stato chiuso/aperto, si evita che si propaghi al genitore e si fa si che cliccando al di fuori del dropdown open=false --}}
-                                          <div x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false" class="hidden sm:flex sm:justify-end sm:items-center gap-x-4 relative">
+                                          <div x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false" class="flex justify-end items-center gap-x-4 relative">
                                                 <a href="{{ route('admin.projects.show', $project->id) }}" class="border border-gray-300 py-1 px-2 rounded-lg font-bold hover:bg-gray-100">
                                                       View project
                                                 </a>

@@ -27,7 +27,7 @@
                                           </div>
 
                                           {{-- tramite il framework Alpine.js si inizializza una variabile open e tramite eventi si tiene traccia dello stato chiuso/aperto, si evita che si propaghi al genitore e si fa si che cliccando al di fuori del dropdown open=false --}}
-                                          <div x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false" class="hidden sm:flex sm:justify-end sm:items-center gap-x-4 relative">
+                                          <div x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false" class="flex justify-end items-center gap-x-4 relative">
                                                 <a href="{{ route('admin.skills.show', $skill->id) }}" class="border border-gray-300 py-1 px-2 rounded-lg font-bold hover:bg-gray-100">
                                                       View skill
                                                 </a>
