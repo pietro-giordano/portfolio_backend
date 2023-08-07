@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['www.pietrogiordano.it'],
 
     'allowed_origins_patterns' => [],
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\MessageController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,11 @@ Route::middleware('auth')->group(function () {
       Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
       Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
       Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+// per ricreare symlink anche nell'host (una volta nell'hosting lanciare l'url in browser 'www.example.com/public/linkstorage' e creerà nuovi symlink)
+Route::get('/linkstorage', function () {
+      Artisan::call('storage:link');
 });
 
 require __DIR__ . '/auth.php';
