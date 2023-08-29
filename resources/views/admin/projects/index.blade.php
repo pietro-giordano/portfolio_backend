@@ -21,7 +21,7 @@
                               @foreach ($projects as $project)
                                     <li class="flex justify-between items-center gap-x-6 p-5">
                                           <div class="flex gap-x-4">
-                                                <div class="min-w-0 max-w-[120px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-[650px] flex-auto">
+                                                <div class="min-w-0 w-28 sm:w-80 md:w-96 overflow-hidden text-ellipsis whitespace-nowrap flex-auto">
                                                       <p class="text-xl font-semibold leading-6 text-gray-900">{{ $project->name }}</p>
                                                       <p class="mt-1 truncate text-xs leading-5 text-gray-500">{{ $project->description }}</p>
                                                 </div>

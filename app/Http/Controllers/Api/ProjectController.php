@@ -15,7 +15,7 @@ class ProjectController extends Controller
       public function index()
       {
             // recupero i projects recuperando anche le relazioni che hanno con le skills (anche se probabilmente non userò)
-            $projects = Project::with('skills')->get();
+            $projects = Project::with('skills')->orderBy('created_at', 'desc')->get();
             // per ogni project verifico che ci sia un video e nel caso tramite asset restituisco il percorso completo da poter passare al front-end
             foreach ($projects as $project) {
                   if ($project->video) {
